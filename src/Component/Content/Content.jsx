@@ -1,12 +1,11 @@
-import React, { useState, Suspense, useEffect, useReducer } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import styles from "./content.module.css";
 import Cars from "../../Data/Cars.json";
-import PlaylistReducer from "../../Reducer/PlaylistReducer";
-import { ADD_TO_PLAYLIST } from "../../Constants/Constants";
-import { MovieContext } from "../../Context/MovieContext";
+
 const Youtube = React.lazy(() => import("../Youtube/Youtube"));
 const Pagination = React.lazy(() => import("../Pagination"));
 const Videos = React.lazy(() => import("../Videos"));
+
 const customStyle = {
   screen_lg: {
     position: "fixed",
@@ -26,7 +25,6 @@ const Content = () => {
   const [dataPerPage, setDataPerPage] = useState(12);
   const [bgActive, setBgActive] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
-  const [playlist, dispatch] = useReducer(PlaylistReducer, data);
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -48,7 +46,6 @@ const Content = () => {
   let a = JSON.parse(localStorage.getItem("playlist")) || [];
 
   function addPlaylist(element) {
-    dispatch({ type: ADD_TO_PLAYLIST, playlist: element });
     a.push(element.title);
     localStorage.setItem("playlist", JSON.stringify(a));
   }

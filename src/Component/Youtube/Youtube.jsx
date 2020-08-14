@@ -15,7 +15,6 @@ const Youtube = () => {
   };
 
 
-  console.log("youtube playlist: ", YoutubePlaylist[0].videoId)
 
   return (
     <div className={styles.youtube}>

@@ -3,8 +3,6 @@ import YouTube from "react-youtube";
 import styles from "./playlistVideo.module.css";
 import { useContext } from "react";
 import { MovieContext } from "../../Context/MovieContext";
-import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 
 const PlaylistVideo = (props) => {
   const playlist = JSON.parse(localStorage.getItem("playlist"));
@@ -34,9 +32,14 @@ const PlaylistVideo = (props) => {
     isEx(false)
   }
 
-  console.log("props: => ", props)
   function _onReady(event) {
     event.target.pauseVideo();
+  }
+
+
+  function removePlaylist(id){
+    const a = playlist.filter(e => e.id !== id);
+    localStorage.setItem("playlist", JSON.stringify(a))
   }
 
 
@@ -81,6 +84,7 @@ const PlaylistVideo = (props) => {
                         />
                       </div>
                       <div className={styles.descListText}>
+                        <span className={styles.removePl} onClick={() => removePlaylist(element.id)}><i class="fa fa-trash"></i></span>
                         <span>{element.title}</span>
                       </div>
                     </div>
@@ -96,10 +100,6 @@ const PlaylistVideo = (props) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    state: state,
-  };
-}
 
-export default connect(mapStateToProps)(PlaylistVideo);
+
+export default PlaylistVideo;

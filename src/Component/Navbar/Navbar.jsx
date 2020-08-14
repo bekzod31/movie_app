@@ -20,8 +20,6 @@ const Navbar = (props) => {
         setMobicon(false);
       }
     });
-    const playlistPath = localStorage.getItem("playlist")?true:false;
-    // setIsPlaylist(playlistPath);
   });
 
 
