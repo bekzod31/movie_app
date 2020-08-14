@@ -1,0 +1,39 @@
+[
+    {
+        "id":1,
+        "title": "Практика Vue JS - создание CRM системы. Введение",
+        "videoId":"NQ2i5cZ87ug",
+        "image": "vue.png"
+    },
+    {
+        "id":2,
+        "title": "Урок 1. CRM на VueJS. Создание приложения с Vue CLI 3",
+        "videoId":"nldxXSjpX0I",
+        "image": "vue.png"
+    },
+    {
+        "id":3,
+        "title": "Урок 2. CRM на VueJS. Страницы и layouts",
+        "videoId":"Pm2aASoksJU",
+        "image": "vue.png"
+    },
+    {
+        "id":4,
+        "title": "Урок 3. CRM на VueJS. Основной layout",
+        "videoId":"YtEIore1kVc",
+        "image": "vue.png"
+    },
+    {
+        "id":5,
+        "title": "Урок 4. CRM на VueJS. Создание фильтра даты + меню",
+        "videoId":"ryTS93FLCfg",
+        "image": "vue.png"
+    },
+    {
+        "id":6,
+        "title": "Урок 5. CRM на VueJS. Валидация с Vuelidate",
+        "videoId":"dGDUtEHa9Ng",
+        "image": "vue.png"
+    }
+
+]
